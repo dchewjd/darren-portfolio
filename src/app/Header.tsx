@@ -17,6 +17,7 @@ const Header = ({ hamburgerMenuOpen, setHamburgerMenuOpen }: any) => {
   const [visible, setVisible] = useState(true);
   const [hamburgerId, setHamburgerId] = useState("");
   const [mobileScrollPosition, setMobileScrollPosition] = useState(0);
+  const [scroll, setScroll] = useState(false);
 
   const handleScroll = () => {
     const currentScrollPos = window.scrollY;
@@ -32,11 +33,8 @@ const Header = ({ hamburgerMenuOpen, setHamburgerMenuOpen }: any) => {
 
   const handleHamburgerClickScroll = (id: string) => {
     setHamburgerMenuOpen((prev: any) => !prev);
+    setScroll(true);
     setHamburgerId(id);
-  };
-
-  const handleHamburgerClose = () => {
-    setHamburgerMenuOpen((prev: any) => !prev);
   };
 
   useEffect(() => {
@@ -46,12 +44,14 @@ const Header = ({ hamburgerMenuOpen, setHamburgerMenuOpen }: any) => {
 
   useEffect(() => {
     console.log("hamburgerMenuOpen", hamburgerMenuOpen);
-    window.scrollTo(0, mobileScrollPosition);
+    if (!hamburgerMenuOpen) {
+      if (!scroll) {
+        window.scrollTo(0, mobileScrollPosition);
+      } else {
+        handleClickScroll(hamburgerId);
+      }
+    }
   }, [hamburgerMenuOpen]);
-
-  useEffect(() => {
-    handleClickScroll(hamburgerId);
-  }, [hamburgerId]);
 
   return (
     <nav
@@ -96,15 +96,18 @@ const Header = ({ hamburgerMenuOpen, setHamburgerMenuOpen }: any) => {
       <div className="my-5 mr-8 md:hidden flex justify-center z-10 cursor-pointer ">
         <RiMenu3Fill
           onClick={() => {
-            setHamburgerMenuOpen((prev: any) => !prev);
             setMobileScrollPosition(window.scrollY);
+            setHamburgerMenuOpen((prev: any) => !prev);
           }}
           size="2.5rem"
           className={`text-slate-400 ${hamburgerMenuOpen ? "hidden" : ""}`}
         />
         <RiCloseFill
           size="2.5rem"
-          onClick={handleHamburgerClose}
+          onClick={() => {
+            setScroll(false);
+            setHamburgerMenuOpen((prev: any) => !prev);
+          }}
           className={`mr-8 text-slate-400 ${
             hamburgerMenuOpen ? "fixed" : "hidden"
           }`}
