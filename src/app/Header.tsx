@@ -16,6 +16,7 @@ const Header = ({ hamburgerMenuOpen, setHamburgerMenuOpen }: any) => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const [hamburgerId, setHamburgerId] = useState("");
+  const [mobileScrollPosition, setMobileScrollPosition] = useState(0);
 
   const handleScroll = () => {
     const currentScrollPos = window.scrollY;
@@ -34,6 +35,10 @@ const Header = ({ hamburgerMenuOpen, setHamburgerMenuOpen }: any) => {
     setHamburgerId(id);
   };
 
+  const handleHamburgerClose = () => {
+    setHamburgerMenuOpen((prev: any) => !prev);
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -41,6 +46,7 @@ const Header = ({ hamburgerMenuOpen, setHamburgerMenuOpen }: any) => {
 
   useEffect(() => {
     console.log("hamburgerMenuOpen", hamburgerMenuOpen);
+    window.scrollTo(0, mobileScrollPosition);
   }, [hamburgerMenuOpen]);
 
   useEffect(() => {
@@ -89,13 +95,16 @@ const Header = ({ hamburgerMenuOpen, setHamburgerMenuOpen }: any) => {
       {/* mobile nav */}
       <div className="my-5 mr-8 md:hidden flex justify-center z-10 cursor-pointer ">
         <RiMenu3Fill
-          onClick={() => setHamburgerMenuOpen((prev: any) => !prev)}
+          onClick={() => {
+            setHamburgerMenuOpen((prev: any) => !prev);
+            setMobileScrollPosition(window.scrollY);
+          }}
           size="2.5rem"
           className={`text-slate-400 ${hamburgerMenuOpen ? "hidden" : ""}`}
         />
         <RiCloseFill
           size="2.5rem"
-          onClick={() => setHamburgerMenuOpen((prev: any) => !prev)}
+          onClick={handleHamburgerClose}
           className={`mr-8 text-slate-400 ${
             hamburgerMenuOpen ? "fixed" : "hidden"
           }`}
