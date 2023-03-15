@@ -93,17 +93,17 @@ export default function Home() {
         >
           <Tabs.List
             aria-label="tabs example"
-            className="font-sfmono text-sm  text-slate-400 my-4"
+            className="font-sfmono text-xs sm:text-sm  text-slate-400 my-4 flex w-full h-16"
           >
             <Tabs.Trigger
               value="tab1"
-              className="text-center h-12 w-36 mb-4 px-6 pt-1 border-b-2 data-[state=inactive]:border-slate-400/30 data-[state=active]:border-orange-400 data-[state=active]:text-orange-400 hover:bg-slate-600"
+              className="text-center w-1/2 sm:w-36 mb-4 px-6 py-2 pt-1 border-b-2 data-[state=inactive]:border-slate-400/30 data-[state=active]:border-orange-400 data-[state=active]:text-orange-400 hover:bg-slate-600"
             >
               Alpha Impact
             </Tabs.Trigger>
             <Tabs.Trigger
               value="tab2"
-              className="text-center h-12 w-36 mb-4 px-6 pt-1 border-b-2 data-[state=inactive]:border-slate-400/30 data-[state=active]:border-orange-400 data-[state=active]:text-orange-400 hover:bg-slate-600"
+              className="text-center w-1/2 sm:w-36 mb-4 px-6 py-2 pt-1 border-b-2 data-[state=inactive]:border-slate-400/30 data-[state=active]:border-orange-400 data-[state=active]:text-orange-400 hover:bg-slate-600"
             >
               NCS
             </Tabs.Trigger>

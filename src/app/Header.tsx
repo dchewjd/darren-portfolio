@@ -97,8 +97,10 @@ const Header = () => {
         />
       </div>
       <div
-        className={`bg-gray-800 w-screen h-screen flex flex-col gap-16 justify-center ${
-          hamburgerMenuOpen ? "fixed" : "hidden"
+        className={`bg-gray-800 w-full h-full flex flex-col gap-16 justify-center ${
+          hamburgerMenuOpen
+            ? "fixed overflow-hidden overscroll-contain"
+            : "hidden"
         }`}
       >
         <a
