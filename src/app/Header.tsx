@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { RiMenu3Fill, RiCloseFill } from "react-icons/ri";
 
 export const handleClickScroll = (id: string) => {
+  console.log("scrolling to", id);
   const element = document.getElementById(id);
   if (element) {
     // 👇 Will scroll smoothly to the top of the next section
@@ -11,10 +12,10 @@ export const handleClickScroll = (id: string) => {
   }
 };
 
-const Header = () => {
+const Header = ({ hamburgerMenuOpen, setHamburgerMenuOpen }: any) => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
-  const [hamburgerMenuOpen, setHamburgerMenuOpen] = useState(false);
+  const [hamburgerId, setHamburgerId] = useState("");
 
   const handleScroll = () => {
     const currentScrollPos = window.scrollY;
@@ -29,8 +30,8 @@ const Header = () => {
   };
 
   const handleHamburgerClickScroll = (id: string) => {
-    setHamburgerMenuOpen((prev) => !prev);
-    handleClickScroll(id);
+    setHamburgerMenuOpen((prev: any) => !prev);
+    setHamburgerId(id);
   };
 
   useEffect(() => {
@@ -42,11 +43,15 @@ const Header = () => {
     console.log("hamburgerMenuOpen", hamburgerMenuOpen);
   }, [hamburgerMenuOpen]);
 
+  useEffect(() => {
+    handleClickScroll(hamburgerId);
+  }, [hamburgerId]);
+
   return (
     <nav
       className={`${
         visible ? "top-0" : ""
-      } bg-gray-800 sticky flex flex-row justify-between`}
+      } bg-gray-800 sticky flex flex-row justify-between `}
     >
       <a
         href="/"
@@ -82,25 +87,23 @@ const Header = () => {
         </button>
       </div>
       {/* mobile nav */}
-      <div className="my-5 mr-12 md:hidden flex justify-center z-10 cursor-pointer ">
+      <div className="my-5 mr-8 md:hidden flex justify-center z-10 cursor-pointer ">
         <RiMenu3Fill
-          onClick={() => setHamburgerMenuOpen((prev) => !prev)}
+          onClick={() => setHamburgerMenuOpen((prev: any) => !prev)}
           size="2.5rem"
-          className={`text-slate-400 ${
-            hamburgerMenuOpen ? "hidden" : "absolute"
-          }`}
+          className={`text-slate-400 ${hamburgerMenuOpen ? "hidden" : ""}`}
         />
         <RiCloseFill
           size="2.5rem"
-          onClick={() => setHamburgerMenuOpen((prev) => !prev)}
-          className={`text-slate-400 ${hamburgerMenuOpen ? "fixed" : "hidden"}`}
+          onClick={() => setHamburgerMenuOpen((prev: any) => !prev)}
+          className={`mr-8 text-slate-400 ${
+            hamburgerMenuOpen ? "fixed" : "hidden"
+          }`}
         />
       </div>
       <div
         className={`bg-gray-800 w-full h-full flex flex-col gap-16 justify-center ${
-          hamburgerMenuOpen
-            ? "fixed overflow-hidden overscroll-contain"
-            : "hidden"
+          hamburgerMenuOpen ? "fixed" : "hidden"
         }`}
       >
         <a

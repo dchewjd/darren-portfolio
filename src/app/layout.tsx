@@ -1,7 +1,6 @@
 "use client";
 
 import "./globals.css";
-import Header from "./Header";
 
 export default function RootLayout({
   children,
@@ -15,10 +14,7 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>
-        <Header />
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
