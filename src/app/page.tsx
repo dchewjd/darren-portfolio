@@ -139,6 +139,10 @@ export default function Home() {
                   experience, resulting in increased customer satisfaction and
                   retention rates
                 </li>
+                <li>
+                  Technologies used: React (Typescript), Express (Node.js),
+                  Spring (Java), JSS, MongoDB
+                </li>
               </ul>
             </Tabs.Content>
             <Tabs.Content value="tab2" className="">
@@ -177,6 +181,10 @@ export default function Home() {
                   leveraging the latest tools and technologies to enhance
                   performance and mitigate risks.
                 </li>
+                <li>
+                  Technologies used: Angular (Typescript), Spring (Java), Sass,
+                  Oracle DB
+                </li>
               </ul>
             </Tabs.Content>
           </Tabs.Root>
@@ -207,7 +215,8 @@ export default function Home() {
               />
             </a>
             <p className="py-4">
-              Technologies used: React, Next.js, Tailwind CSS, OpenAI API
+              Technologies used: React, Next.js, Tailwind CSS, OpenAI API,
+              Vercel
             </p>
           </div>
 
@@ -220,7 +229,7 @@ export default function Home() {
               className="border-2 border-gray-400 my-2"
             />
             <p className="py-4">
-              Technologies used: React, Next.js, Tailwind CSS, Radix UI
+              Technologies used: React, Next.js, Tailwind CSS, Radix UI, Vercel
             </p>
           </div>
         </div>
