@@ -27,7 +27,7 @@ export default function Home() {
           id="hero"
           className="max-w-2xl h-screen flex flex-col justify-center gap-1 md:gap-2"
         >
-          <p className="text-orange-400 tracking-normal leading-4 md:leading-10 font-sfmono">
+          <p className="text-orange-400 tracking-normal leading-3 md:leading-10 font-sfmono">
             Hi, my name is
           </p>
           <br />
@@ -36,7 +36,7 @@ export default function Home() {
             I craft delightful web experiences.
           </h1>
           <br />
-          <p className="text-slate-400 max-w-2xl pb-4">
+          <p className="text-slate-400 max-w-2xl pb-1 lg:pb-4">
             I’m a software engineer specializing in building (and occasionally
             designing) exceptional digital experiences.
           </p>
@@ -104,13 +104,13 @@ export default function Home() {
             >
               <Tabs.Trigger
                 value="tab1"
-                className="text-center w-1/2 sm:w-36 mb-4 px-6 py-2 pt-1 border-b-2 data-[state=inactive]:border-slate-400/30 data-[state=active]:border-orange-400 data-[state=active]:text-orange-400 hover:bg-slate-600"
+                className="text-center w-1/2 sm:w-40 mb-4 px-6 py-2 pt-1 border-b-2 data-[state=inactive]:border-slate-400/30 data-[state=active]:border-orange-400 data-[state=active]:text-orange-400 hover:bg-slate-600"
               >
                 Alpha Impact
               </Tabs.Trigger>
               <Tabs.Trigger
                 value="tab2"
-                className="text-center w-1/2 sm:w-36 mb-4 px-6 py-2 pt-1 border-b-2 data-[state=inactive]:border-slate-400/30 data-[state=active]:border-orange-400 data-[state=active]:text-orange-400 hover:bg-slate-600"
+                className="text-center w-1/2 sm:w-40 mb-4 px-6 py-2 pt-1 border-b-2 data-[state=inactive]:border-slate-400/30 data-[state=active]:border-orange-400 data-[state=active]:text-orange-400 hover:bg-slate-600"
               >
                 NCS
               </Tabs.Trigger>
@@ -231,6 +231,12 @@ export default function Home() {
             <p className="py-4">
               Technologies used: React, Next.js, Tailwind CSS, Radix UI, Vercel
             </p>
+          </div>
+          <div className="my-10">
+            <h4 className="text-slate-300">
+              More projects brewing in 2023 ...
+            </h4>
+            {/* <p>More projects brewing in 2023...</p> */}
           </div>
         </div>
         <div id="contact" className="max-w-2xl py-24">

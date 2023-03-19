@@ -2,7 +2,7 @@
 
 @layer base {
   h1 {
-    @apply text-5xl sm:text-6xl md:text-7xl font-semibold leading-snug;
+    @apply text-4xl sm:text-6xl md:text-7xl font-semibold leading-snug;
   }
   h2 {
     @apply text-[32px] font-semibold;
