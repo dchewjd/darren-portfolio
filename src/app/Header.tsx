@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { RiMenu3Fill, RiCloseFill } from "react-icons/ri";
+import { motion } from "framer-motion";
 
 export const handleClickScroll = (id: string) => {
   console.log("scrolling to", id);
@@ -54,46 +55,76 @@ const Header = ({ hamburgerMenuOpen, setHamburgerMenuOpen }: any) => {
   }, [hamburgerMenuOpen]);
 
   return (
-    <nav
+    <motion.nav
       className={`${
         visible ? "top-0" : ""
-      } bg-gray-800 sticky flex flex-row justify-between `}
+      } bg-gray-800 sticky flex flex-row justify-between shadow-sm shadow-gray-600`}
     >
-      <a
+      <motion.a
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         href="/"
         className="mx-8 my-4 w-fit text-orange-400 font-serif text-5xl flex justify-start"
       >
         D
-      </a>
+      </motion.a>
       {/* desktop nav */}
-      <div className="font-sfmono text-sm hidden md:visible md:flex justify-end">
-        <button
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="font-sfmono text-sm hidden md:visible md:flex justify-end mr-2"
+      >
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{
+            ease: [0.6, 0.01, 0.05, 0.95],
+            duration: 0.1,
+          }}
           onClick={() => handleClickScroll("about")}
           className="px-8 py-6 min-w-fit text-slate-300 hover:text-orange-400"
         >
           <span className="text-orange-400">01.</span> About
-        </button>
-        <button
+        </motion.button>
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{
+            ease: [0.6, 0.01, 0.05, 0.95],
+            duration: 0.1,
+          }}
           onClick={() => handleClickScroll("experience")}
           className="px-8 py-6 min-w-fit text-slate-300 hover:text-orange-400"
         >
           <span className="text-orange-400">02.</span> Experience
-        </button>
-        <button
+        </motion.button>
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{
+            ease: [0.6, 0.01, 0.05, 0.95],
+            duration: 0.1,
+          }}
           onClick={() => handleClickScroll("work")}
           className="px-8 py-6 min-w-fit text-slate-300 hover:text-orange-400"
         >
           <span className="text-orange-400">03.</span> Work
-        </button>
-        <button
+        </motion.button>
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{
+            ease: [0.6, 0.01, 0.05, 0.95],
+            duration: 0.1,
+          }}
           onClick={() => handleClickScroll("contact")}
           className="px-8 py-6 min-w-fit text-slate-300 hover:text-orange-400"
         >
           <span className="text-orange-400">04.</span> Contact
-        </button>
-      </div>
+        </motion.button>
+      </motion.div>
       {/* mobile nav */}
-      <div className="my-5 mr-8 md:hidden flex justify-center z-10 cursor-pointer ">
+      <motion.div className="my-5 mr-8 md:hidden flex justify-center z-10 cursor-pointer ">
         <RiMenu3Fill
           onClick={() => {
             setMobileScrollPosition(window.scrollY);
@@ -112,46 +143,86 @@ const Header = ({ hamburgerMenuOpen, setHamburgerMenuOpen }: any) => {
             hamburgerMenuOpen ? "fixed" : "hidden"
           }`}
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+        initial={{ x: 100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{
+          type: "spring",
+          bounce: 0.4,
+          duration: 0.6,
+          delay: 0,
+        }}
         className={`bg-gray-800 w-full h-full flex flex-col gap-16 justify-center ${
           hamburgerMenuOpen ? "fixed" : "hidden"
         }`}
       >
-        <a
+        <motion.a
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            bounce: 0.4,
+            duration: 0.2,
+            delay: 0.2,
+          }}
           onClick={() => {
             handleHamburgerClickScroll("about");
           }}
           className="place-self-center cursor-pointer text-2xl"
         >
           01. About
-        </a>
-        <a
+        </motion.a>
+        <motion.a
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            bounce: 0.4,
+            duration: 0.2,
+            delay: 0.25,
+          }}
           onClick={() => {
             handleHamburgerClickScroll("experience");
           }}
           className="place-self-center cursor-pointer text-2xl"
         >
           02. Experience
-        </a>
-        <a
+        </motion.a>
+        <motion.a
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            bounce: 0.4,
+            duration: 0.2,
+            delay: 0.3,
+          }}
           onClick={() => {
             handleHamburgerClickScroll("work");
           }}
           className="place-self-center cursor-pointer text-2xl"
         >
           03. Work
-        </a>
-        <a
+        </motion.a>
+        <motion.a
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            bounce: 0.4,
+            duration: 0.2,
+            delay: 0.35,
+          }}
           onClick={() => {
             handleHamburgerClickScroll("contact");
           }}
           className="place-self-center cursor-pointer text-2xl"
         >
           04. Contact
-        </a>
-      </div>
-    </nav>
+        </motion.a>
+      </motion.div>
+    </motion.nav>
   );
 };
 

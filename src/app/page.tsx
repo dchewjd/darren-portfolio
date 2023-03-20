@@ -4,10 +4,12 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import React, { useState } from "react";
 import * as Tabs from "@radix-ui/react-tabs";
+import { motion } from "framer-motion";
 import { RiLinkedinBoxFill, RiMailFill, RiGithubFill } from "react-icons/ri";
 import Header, { handleClickScroll } from "./Header";
 import motivateAiScreen from "../../public/motivate-ai-screencap.png";
 import darrenPortfolioScreen from "../../public/darren-portfolio-screencap.png";
+import { riseWithFade, FadeIn } from "utils/animations";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +17,11 @@ export default function Home() {
   const [hamburgerMenuOpen, setHamburgerMenuOpen] = useState(false);
 
   return (
-    <div className={`${hamburgerMenuOpen ? "h-screen overflow-hidden" : ""}`}>
+    <motion.div
+      initial="initial"
+      animate="animate"
+      className={`${hamburgerMenuOpen ? "h-screen overflow-hidden" : ""}`}
+    >
       <Header
         hamburgerMenuOpen={hamburgerMenuOpen}
         setHamburgerMenuOpen={setHamburgerMenuOpen}
@@ -23,11 +29,12 @@ export default function Home() {
       <div
         className={`bg-gray-800 px-8 sm:px-16 md:px-24 flex flex-col items-center justify-center`}
       >
-        <div
+        <motion.div
           id="hero"
-          className="max-w-2xl h-screen flex flex-col justify-center gap-1 md:gap-2"
+          className="max-w-2xl h-screen flex flex-col justify-center gap-1 md:gap-2 my-4"
+          variants={riseWithFade}
         >
-          <p className="text-orange-400 tracking-normal leading-3 md:leading-10 font-sfmono">
+          <p className="text-orange-400 tracking-normal leading-6 md:leading-10 font-sfmono">
             Hi, my name is
           </p>
           <br />
@@ -41,14 +48,36 @@ export default function Home() {
             designing) exceptional digital experiences.
           </p>
           <br />
-          <button
-            className="text-md px-2 pt-3 pb-2 w-1/3 text-orange-400 border rounded-md border-orange-400 justify-items-start hover:bg-orange-400/80 hover:text-gray-800 "
-            onClick={() => handleClickScroll("about")}
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{
+              ease: [0.6, 0.01, 0.05, 0.95],
+              duration: 0.1,
+            }}
+            className="text-md px-2 pt-3 pb-2 w-1/3 text-orange-400 border rounded-md border-orange-400 justify-items-start hover:bg-orange-400/90 hover:font-medium hover:text-gray-800 "
+            onClick={() => {
+              setTimeout(() => {
+                handleClickScroll("about");
+              }, 200);
+            }}
           >
             About Me
-          </button>
-        </div>
-        <div id="about" className="max-w-2xl py-24 ">
+          </motion.button>
+        </motion.div>
+        <motion.div
+          initial={{ x: 10, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            bounce: 0.4,
+            duration: 0.8,
+            delay: 0.5,
+          }}
+          viewport={{ once: true }}
+          id="about"
+          className="max-w-2xl py-24"
+        >
           <p className="font-sfmono text-orange-400">
             01.{" "}
             <span className="text-3xl font-semibold text-slate-300">
@@ -85,8 +114,20 @@ export default function Home() {
             and dedicated software engineer to bring your digital vision to
             life, I'd love to hear from you.
           </p>
-        </div>
-        <div id="experience" className="max-w-2xl py-24">
+        </motion.div>
+        <motion.div
+          initial={{ x: 10, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            bounce: 0.4,
+            duration: 0.8,
+            delay: 0.5,
+          }}
+          viewport={{ once: true }}
+          id="experience"
+          className="max-w-2xl py-24"
+        >
           <p className="font-sfmono text-orange-400">
             02.{" "}
             <span className="text-3xl font-semibold text-slate-300">
@@ -116,88 +157,104 @@ export default function Home() {
               </Tabs.Trigger>
             </Tabs.List>
             <Tabs.Content value="tab1" className="">
-              <p className="text-slate-300">
-                Software Engineer
-                <span className="text-orange-400"> @ Alpha Impact</span>
-              </p>
-              <p className="text-sm">November 2021 - February 2022</p>
-              <br />
-              <ul className="ml-4 list-disc list-outside marker:text-orange-400 gap-1 space-y-4 ">
-                <li>
-                  Designed and developed a highly engaging user interface for a
-                  rewards and referral program, resulting in a significant
-                  increase in the total number of users of the web application
-                </li>
-                <li>
-                  Collaborated with cross-functional agile teams to prioritize
-                  and scope feature requests, ensuring that the most impactful
-                  features were developed first and delivered on time
-                </li>
-                <li>
-                  Communicated regularly with internal stakeholders to identify
-                  user pain points and developed solutions to optimize the user
-                  experience, resulting in increased customer satisfaction and
-                  retention rates
-                </li>
-                <li>
-                  Technologies used: React (Typescript), Express (Node.js),
-                  Spring (Java), JSS, MongoDB
-                </li>
-              </ul>
+              <motion.div variants={FadeIn}>
+                <p className="text-slate-300">
+                  Software Engineer
+                  <span className="text-orange-400"> @ Alpha Impact</span>
+                </p>
+                <p className="text-sm">November 2021 - February 2022</p>
+                <br />
+                <ul className="ml-4 list-disc list-outside marker:text-orange-400 gap-1 space-y-4 ">
+                  <li>
+                    Designed and developed a highly engaging user interface for
+                    a rewards and referral program, resulting in a significant
+                    increase in the total number of users of the web application
+                  </li>
+                  <li>
+                    Collaborated with cross-functional agile teams to prioritize
+                    and scope feature requests, ensuring that the most impactful
+                    features were developed first and delivered on time
+                  </li>
+                  <li>
+                    Communicated regularly with internal stakeholders to
+                    identify user pain points and developed solutions to
+                    optimize the user experience, resulting in increased
+                    customer satisfaction and retention rates
+                  </li>
+                  <li>
+                    Technologies used: React (Typescript), Express (Node.js),
+                    Spring (Java), JSS, MongoDB
+                  </li>
+                </ul>
+              </motion.div>
             </Tabs.Content>
             <Tabs.Content value="tab2" className="">
-              <p className="text-slate-300">
-                Application Consultant
-                <span className="text-orange-400"> @ NCS</span>
-              </p>
-              <p className="text-sm">November 2018 - October 2021</p>
-              <br />
-              <ul className="ml-4 list-disc list-outside marker:text-orange-400 gap-1 space-y-4 ">
-                <li>
-                  Kickstarted the development of a high-traffic web application
-                  as part of Immigration & Checkpoints Authority's Digital
-                  Transformation initiative, delivering a reliable and
-                  user-friendly platform for millions of users
-                </li>
-                <li>
-                  Revamped an outdated web application, improving site
-                  performance by 20% and enhancing the user experience through
-                  responsive design and streamlined functionality
-                </li>
-                <li>
-                  Chaired discussions with stakeholders to identify key
-                  requirements and develop tailored solutions to address their
-                  specific needs, resulting in increased customer satisfaction
-                  and retention
-                </li>
-                <li>
-                  Successfully coded, tested, reviewed, and delivered software
-                  solutions with a 100% on-time record, meeting or exceeding
-                  service level objectives and ensuring high-quality results
-                </li>
-                <li>
-                  Optimized web application compatibility and security across
-                  multiple platforms, including web and mobile devices,
-                  leveraging the latest tools and technologies to enhance
-                  performance and mitigate risks.
-                </li>
-                <li>
-                  Technologies used: Angular (Typescript), Spring (Java), Sass,
-                  Oracle DB
-                </li>
-              </ul>
+              <motion.div variants={FadeIn}>
+                <p className="text-slate-300">
+                  Application Consultant
+                  <span className="text-orange-400"> @ NCS</span>
+                </p>
+                <p className="text-sm">November 2018 - October 2021</p>
+                <br />
+                <ul className="ml-4 list-disc list-outside marker:text-orange-400 gap-1 space-y-4 ">
+                  <li>
+                    Kickstarted the development of a high-traffic web
+                    application as part of Immigration & Checkpoints Authority's
+                    Digital Transformation initiative, delivering a reliable and
+                    user-friendly platform for millions of users
+                  </li>
+                  <li>
+                    Revamped an outdated web application, improving site
+                    performance by 20% and enhancing the user experience through
+                    responsive design and streamlined functionality
+                  </li>
+                  <li>
+                    Chaired discussions with stakeholders to identify key
+                    requirements and develop tailored solutions to address their
+                    specific needs, resulting in increased customer satisfaction
+                    and retention
+                  </li>
+                  <li>
+                    Successfully coded, tested, reviewed, and delivered software
+                    solutions with a 100% on-time record, meeting or exceeding
+                    service level objectives and ensuring high-quality results
+                  </li>
+                  <li>
+                    Optimized web application compatibility and security across
+                    multiple platforms, including web and mobile devices,
+                    leveraging the latest tools and technologies to enhance
+                    performance and mitigate risks.
+                  </li>
+                  <li>
+                    Technologies used: Angular (Typescript), Spring (Java),
+                    Sass, Oracle DB
+                  </li>
+                </ul>
+              </motion.div>
             </Tabs.Content>
           </Tabs.Root>
-        </div>
-        <div id="work" className="max-w-2xl py-24 w-full">
+        </motion.div>
+        <motion.div
+          initial={{ x: 10, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            bounce: 0.4,
+            duration: 0.8,
+            delay: 0.5,
+          }}
+          viewport={{ once: true }}
+          id="work"
+          className="max-w-2xl py-24 w-full"
+        >
           <p className="font-sfmono text-orange-400">
             03.{" "}
             <span className="text-3xl font-semibold text-slate-300">
               Some Things I've built
             </span>
           </p>
-          <div className="my-10">
-            <a
+          <motion.div whileHover={{ scale: 1.01, rotate: 1 }} className="my-10">
+            <motion.a
               href="https://motivate-ai.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
@@ -211,14 +268,15 @@ export default function Home() {
               <Image
                 src={motivateAiScreen}
                 alt="motivate-ai-screencap"
-                className=" border-2 border-gray-400 hover:border-orange-300 my-2"
+                className=" border-2 border-gray-400 hover:border-orange-400 my-2"
+                width={600}
               />
-            </a>
+            </motion.a>
             <p className="py-4">
               Technologies used: React, Next.js, Tailwind CSS, OpenAI API,
               Vercel
             </p>
-          </div>
+          </motion.div>
 
           <div className="my-10">
             <h4 className="text-slate-300">Portfolio</h4>
@@ -227,19 +285,32 @@ export default function Home() {
               src={darrenPortfolioScreen}
               alt={"darren-portfolio-screencap"}
               className="border-2 border-gray-400 my-2"
+              width={600}
             />
             <p className="py-4">
-              Technologies used: React, Next.js, Tailwind CSS, Radix UI, Vercel
+              Technologies used: React, Next.js, Tailwind CSS, Radix UI, Framer
+              Motion, Vercel
             </p>
           </div>
           <div className="my-10">
             <h4 className="text-slate-300">
               More projects brewing in 2023 ...
             </h4>
-            {/* <p>More projects brewing in 2023...</p> */}
           </div>
-        </div>
-        <div id="contact" className="max-w-2xl py-24">
+        </motion.div>
+        <motion.div
+          initial={{ x: 10, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            bounce: 0.4,
+            duration: 0.8,
+            delay: 0.5,
+          }}
+          viewport={{ once: true }}
+          id="contact"
+          className="max-w-2xl py-24"
+        >
           <p className="font-sfmono text-orange-400">
             04.{" "}
             <span className="text-3xl font-semibold text-slate-300">
@@ -253,7 +324,12 @@ export default function Home() {
           </p>
 
           <div className="space-y-2">
-            <a
+            <motion.a
+              whileHover={{ scale: 1.01 }}
+              transition={{
+                ease: [0.6, 0.01, 0.05, 0.95],
+                duration: 0.1,
+              }}
               className="hover:text-orange-400 cursor-pointer flex gap-2 w-fit"
               href="https://linkedin.com/in/darren-cjd"
               target="_blank"
@@ -261,8 +337,13 @@ export default function Home() {
             >
               <RiLinkedinBoxFill />
               LinkedIn
-            </a>
-            <a
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.01 }}
+              transition={{
+                ease: [0.6, 0.01, 0.05, 0.95],
+                duration: 0.1,
+              }}
               className="hover:text-orange-400 cursor-pointer flex gap-2 w-fit"
               href="https://github.com/dchewjd"
               target="_blank"
@@ -270,20 +351,25 @@ export default function Home() {
             >
               <RiGithubFill />
               Github
-            </a>
-            <a
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.01 }}
+              transition={{
+                ease: [0.6, 0.01, 0.05, 0.95],
+                duration: 0.1,
+              }}
               className="hover:text-orange-400 cursor-pointer flex gap-2 w-fit"
               href="mailto:darrencjd@gmail.com"
             >
               <RiMailFill />
               Email
-            </a>
+            </motion.a>
           </div>
-        </div>
+        </motion.div>
         <div className="">
           <p>© 2023 - Darren Chew</p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
