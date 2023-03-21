@@ -173,8 +173,8 @@ const Header = ({ hamburgerMenuOpen, setHamburgerMenuOpen }: any) => {
           transition={{
             type: "spring",
             bounce: 0.4,
-            duration: 0.3,
-            delay: 0.2,
+            duration: 0.2,
+            delay: 0.1,
           }}
           onClick={() => {
             handleHamburgerClickScroll("about");
@@ -189,8 +189,8 @@ const Header = ({ hamburgerMenuOpen, setHamburgerMenuOpen }: any) => {
           transition={{
             type: "spring",
             bounce: 0.4,
-            duration: 0.3,
-            delay: 0.25,
+            duration: 0.2,
+            delay: 0.1,
           }}
           onClick={() => {
             handleHamburgerClickScroll("experience");
@@ -205,8 +205,8 @@ const Header = ({ hamburgerMenuOpen, setHamburgerMenuOpen }: any) => {
           transition={{
             type: "spring",
             bounce: 0.4,
-            duration: 0.3,
-            delay: 0.3,
+            duration: 0.2,
+            delay: 0.1,
           }}
           onClick={() => {
             handleHamburgerClickScroll("work");
@@ -221,8 +221,8 @@ const Header = ({ hamburgerMenuOpen, setHamburgerMenuOpen }: any) => {
           transition={{
             type: "spring",
             bounce: 0.4,
-            duration: 0.3,
-            delay: 0.35,
+            duration: 0.2,
+            delay: 0.1,
           }}
           onClick={() => {
             handleHamburgerClickScroll("contact");
