@@ -121,8 +121,8 @@ export default function Home() {
           transition={{
             type: "spring",
             bounce: 0.4,
-            duration: 0.8,
-            delay: 0.5,
+            duration: 0.4,
+            delay: 0.1,
           }}
           viewport={{ once: true }}
           id="experience"
@@ -183,7 +183,7 @@ export default function Home() {
                   </li>
                   <li>
                     Technologies used: React (Typescript), Express (Node.js),
-                    Spring (Java), JSS, MongoDB
+                    Spring (Java), JSS, MongoDB , Figma
                   </li>
                 </ul>
               </motion.div>

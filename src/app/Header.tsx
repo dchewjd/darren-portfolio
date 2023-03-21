@@ -160,7 +160,7 @@ const Header = ({ hamburgerMenuOpen, setHamburgerMenuOpen }: any) => {
         transition={{
           type: "spring",
           bounce: 0.4,
-          duration: 0.4,
+          duration: 0.1,
           delay: 0,
         }}
         className={`bg-gray-800 w-full h-full flex flex-col gap-16 justify-center ${
@@ -173,7 +173,7 @@ const Header = ({ hamburgerMenuOpen, setHamburgerMenuOpen }: any) => {
           transition={{
             type: "spring",
             bounce: 0.4,
-            duration: 0.2,
+            duration: 0.3,
             delay: 0.2,
           }}
           onClick={() => {
@@ -189,7 +189,7 @@ const Header = ({ hamburgerMenuOpen, setHamburgerMenuOpen }: any) => {
           transition={{
             type: "spring",
             bounce: 0.4,
-            duration: 0.2,
+            duration: 0.3,
             delay: 0.25,
           }}
           onClick={() => {
@@ -205,7 +205,7 @@ const Header = ({ hamburgerMenuOpen, setHamburgerMenuOpen }: any) => {
           transition={{
             type: "spring",
             bounce: 0.4,
-            duration: 0.2,
+            duration: 0.3,
             delay: 0.3,
           }}
           onClick={() => {
@@ -221,7 +221,7 @@ const Header = ({ hamburgerMenuOpen, setHamburgerMenuOpen }: any) => {
           transition={{
             type: "spring",
             bounce: 0.4,
-            duration: 0.2,
+            duration: 0.3,
             delay: 0.35,
           }}
           onClick={() => {
