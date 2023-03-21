@@ -76,7 +76,7 @@ export default function Home() {
           }}
           viewport={{ once: true }}
           id="about"
-          className="max-w-2xl my-24"
+          className="max-w-2xl py-12 md:py24"
         >
           <p className="font-sfmono text-orange-400">
             01.{" "}
@@ -126,7 +126,7 @@ export default function Home() {
           }}
           viewport={{ once: true }}
           id="experience"
-          className="max-w-2xl my-24"
+          className="max-w-2xl py-12 md:py24"
         >
           <p className="font-sfmono text-orange-400">
             02.{" "}
@@ -245,7 +245,7 @@ export default function Home() {
           }}
           viewport={{ once: true }}
           id="work"
-          className="max-w-2xl my-24 w-full"
+          className="max-w-2xl py-12 md:py24 w-full"
         >
           <p className="font-sfmono text-orange-400">
             03.{" "}
@@ -309,7 +309,7 @@ export default function Home() {
           }}
           viewport={{ once: true }}
           id="contact"
-          className="max-w-2xl my-24"
+          className="max-w-2xl py-12 md:py24"
         >
           <p className="font-sfmono text-orange-400">
             04.{" "}

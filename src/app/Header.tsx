@@ -7,9 +7,18 @@ import { motion } from "framer-motion";
 export const handleClickScroll = (id: string) => {
   console.log("scrolling to", id);
   const element = document.getElementById(id);
+  const headerOffset = 80;
+  const elementPosition = element?.getBoundingClientRect().top;
+  let offsetPosition = 0;
+  if (elementPosition) {
+    offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  }
   if (element) {
     // 👇 Will scroll smoothly to the top of the next section
-    element.scrollIntoView({ behavior: "smooth" });
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
   }
 };
 
@@ -123,6 +132,7 @@ const Header = ({ hamburgerMenuOpen, setHamburgerMenuOpen }: any) => {
           <span className="text-orange-400">04.</span> Contact
         </motion.button>
       </motion.div>
+
       {/* mobile nav */}
       <motion.div className="my-5 mr-8 md:hidden flex justify-center z-10 cursor-pointer ">
         <RiMenu3Fill
@@ -150,7 +160,7 @@ const Header = ({ hamburgerMenuOpen, setHamburgerMenuOpen }: any) => {
         transition={{
           type: "spring",
           bounce: 0.4,
-          duration: 0.6,
+          duration: 0.4,
           delay: 0,
         }}
         className={`bg-gray-800 w-full h-full flex flex-col gap-16 justify-center ${
