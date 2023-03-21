@@ -71,8 +71,8 @@ export default function Home() {
           transition={{
             type: "spring",
             bounce: 0.4,
-            duration: 0.8,
-            delay: 0.5,
+            duration: 0.6,
+            delay: 0.4,
           }}
           viewport={{ once: true }}
           id="about"
@@ -121,8 +121,8 @@ export default function Home() {
           transition={{
             type: "spring",
             bounce: 0.4,
-            duration: 0.2,
-            delay: 0,
+            duration: 0.6,
+            delay: 0.4,
           }}
           viewport={{ once: true }}
           id="experience"
@@ -240,8 +240,8 @@ export default function Home() {
           transition={{
             type: "spring",
             bounce: 0.4,
-            duration: 0.8,
-            delay: 0.5,
+            duration: 0.6,
+            delay: 0.4,
           }}
           viewport={{ once: true }}
           id="work"
@@ -304,8 +304,8 @@ export default function Home() {
           transition={{
             type: "spring",
             bounce: 0.4,
-            duration: 0.8,
-            delay: 0.5,
+            duration: 0.6,
+            delay: 0.4,
           }}
           viewport={{ once: true }}
           id="contact"
