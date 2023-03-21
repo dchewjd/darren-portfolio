@@ -31,7 +31,7 @@ export default function Home() {
       >
         <motion.div
           id="hero"
-          className="max-w-2xl h-[calc(100vh-5rem)] flex flex-col justify-center gap-1 md:gap-2 my-4"
+          className="max-w-2xl h-[calc(100vh-7rem)] flex flex-col justify-center gap-1 md:gap-2 my-4"
           variants={riseWithFade}
         >
           <p className="text-orange-400 tracking-normal leading-6 md:leading-10 font-sfmono">
