@@ -31,7 +31,7 @@ export default function Home() {
       >
         <motion.div
           id="hero"
-          className="max-w-2xl h-screen flex flex-col justify-center gap-1 md:gap-2 my-4"
+          className="max-w-2xl h-[calc(100vh-5rem)] flex flex-col justify-center gap-1 md:gap-2 my-4"
           variants={riseWithFade}
         >
           <p className="text-orange-400 tracking-normal leading-6 md:leading-10 font-sfmono">
@@ -76,7 +76,7 @@ export default function Home() {
           }}
           viewport={{ once: true }}
           id="about"
-          className="max-w-2xl py-24"
+          className="max-w-2xl my-24"
         >
           <p className="font-sfmono text-orange-400">
             01.{" "}
@@ -126,7 +126,7 @@ export default function Home() {
           }}
           viewport={{ once: true }}
           id="experience"
-          className="max-w-2xl py-24"
+          className="max-w-2xl my-24"
         >
           <p className="font-sfmono text-orange-400">
             02.{" "}
@@ -245,7 +245,7 @@ export default function Home() {
           }}
           viewport={{ once: true }}
           id="work"
-          className="max-w-2xl py-24 w-full"
+          className="max-w-2xl my-24 w-full"
         >
           <p className="font-sfmono text-orange-400">
             03.{" "}
@@ -309,7 +309,7 @@ export default function Home() {
           }}
           viewport={{ once: true }}
           id="contact"
-          className="max-w-2xl py-24"
+          className="max-w-2xl my-24"
         >
           <p className="font-sfmono text-orange-400">
             04.{" "}

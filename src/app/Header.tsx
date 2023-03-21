@@ -58,7 +58,7 @@ const Header = ({ hamburgerMenuOpen, setHamburgerMenuOpen }: any) => {
     <motion.nav
       className={`${
         visible ? "top-0" : ""
-      } bg-gray-800 sticky flex flex-row justify-between shadow-sm shadow-gray-600`}
+      } bg-gray-800 sticky flex flex-row justify-between shadow-sm shadow-gray-600 z-10`}
     >
       <motion.a
         initial={{ opacity: 0 }}
