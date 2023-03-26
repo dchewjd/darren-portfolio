@@ -288,8 +288,8 @@ export default function Home() {
             >
               <h4 className="text-slate-300 ">Motivate AI</h4>
               <p>
-                A motivational quote generator powered by ChatGPT (OpenAI API).
-                Just for laughs!
+                A "motivational" quote generator powered by ChatGPT (OpenAI
+                API).
               </p>
               <Image
                 src={motivateAiScreen}
