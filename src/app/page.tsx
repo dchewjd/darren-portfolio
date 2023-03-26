@@ -9,6 +9,7 @@ import { RiLinkedinBoxFill, RiMailFill, RiGithubFill } from "react-icons/ri";
 import Header, { handleClickScroll } from "./Header";
 import motivateAiScreen from "../../public/motivate-ai-screencap.png";
 import darrenPortfolioScreen from "../../public/darren-portfolio-screencap.png";
+import spacexLaunchesScreen from "../../public/spacex-launches-screencap.png";
 import { riseWithFade, FadeIn } from "utils/animations";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -253,7 +254,32 @@ export default function Home() {
               Some Things I've built
             </span>
           </p>
-          <motion.div whileHover={{ scale: 1.01, rotate: 1 }} className="my-10">
+
+          <motion.div whileHover={{ scale: 1.01 }} className="my-10">
+            <motion.a
+              href="https://spacex-launches-ten.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className=""
+            >
+              <h4 className="text-slate-300 ">SpaceX Launches</h4>
+              <p>
+                Displays some of SpaceX's past launches, gotten directly from
+                the SpaceX API
+              </p>
+              <Image
+                src={spacexLaunchesScreen}
+                alt="spacex-launches-screencap"
+                className=" border-2 border-gray-400 hover:border-orange-400 my-2"
+                width={600}
+              />
+            </motion.a>
+            <p className="py-4">
+              Technologies used: React, Next.js, GraphQL, Apollo, Vercel
+            </p>
+          </motion.div>
+
+          <motion.div whileHover={{ scale: 1.01 }} className="my-10">
             <motion.a
               href="https://motivate-ai.vercel.app/"
               target="_blank"
@@ -262,8 +288,8 @@ export default function Home() {
             >
               <h4 className="text-slate-300 ">Motivate AI</h4>
               <p>
-                A motivational quote generator powered by ChatGPT. Just for
-                laughs!
+                A motivational quote generator powered by ChatGPT (OpenAI API).
+                Just for laughs!
               </p>
               <Image
                 src={motivateAiScreen}
@@ -273,8 +299,7 @@ export default function Home() {
               />
             </motion.a>
             <p className="py-4">
-              Technologies used: React, Next.js, Tailwind CSS, OpenAI API,
-              Vercel
+              Technologies used: React, Next.js, Tailwind CSS, REST API, Vercel
             </p>
           </motion.div>
 
