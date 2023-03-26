@@ -44,5 +44,10 @@
   src: url("../../public/CalibreRegular.otf");
 }
 
+@font-face {
+  font-family: "octosquares";
+  src: url("../../public/TT\ Octosquares\ Trial\ Regular.ttf");
+}
+
 @layer utilities {
 }

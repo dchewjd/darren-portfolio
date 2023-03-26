@@ -13,6 +13,7 @@ module.exports = {
       fontFamily: {
         sfmono: ["SF Mono", "monospace"],
         calibre: ["Calibre", "sans-serif"],
+        octo: ["Octosquares", "sans-serif"],
       },
     },
   },

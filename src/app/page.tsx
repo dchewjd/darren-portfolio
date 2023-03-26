@@ -391,9 +391,21 @@ export default function Home() {
             </motion.a>
           </div>
         </motion.div>
-        <div className="">
-          <p>© 2023 - Darren Chew</p>
-        </div>
+        <motion.div
+          initial={{ x: 10, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            bounce: 0.4,
+            duration: 0.6,
+            delay: 0.4,
+          }}
+          viewport={{ once: true }}
+          id="footer"
+          className="font-octo font-semibold text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[5rem] text-slate-700/0 p-8 bg-clip-text bg-gradient-to-r from-slate-300/50 to-slate-700/60"
+        >
+          DARREN CHEW
+        </motion.div>
       </div>
     </motion.div>
   );
