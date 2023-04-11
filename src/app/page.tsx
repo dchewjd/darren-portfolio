@@ -263,10 +263,6 @@ export default function Home() {
               className=""
             >
               <h4 className="text-slate-300 ">SpaceX Launches</h4>
-              <p>
-                Displays some of SpaceX's past launches, gotten directly from
-                the SpaceX API
-              </p>
               <Image
                 src={spacexLaunchesScreen}
                 alt="spacex-launches-screencap"
@@ -274,8 +270,15 @@ export default function Home() {
                 width={600}
               />
             </motion.a>
-            <p className="py-4">
-              Technologies used: React, Next.js, GraphQL, Apollo, Vercel
+            <p className="pt-4">
+              Displays some of SpaceX's past launches, gotten directly from the
+              SpaceX API
+            </p>
+            <p className="py-2">
+              Technologies used:{" "}
+              <span className="text-slate-300/90">
+                React, Next.js, GraphQL, Apollo, Vercel
+              </span>
             </p>
           </motion.div>
 
@@ -287,10 +290,7 @@ export default function Home() {
               className=""
             >
               <h4 className="text-slate-300 ">Motivate AI</h4>
-              <p>
-                A "motivational" quote generator powered by ChatGPT (OpenAI
-                API).
-              </p>
+
               <Image
                 src={motivateAiScreen}
                 alt="motivate-ai-screencap"
@@ -298,8 +298,14 @@ export default function Home() {
                 width={600}
               />
             </motion.a>
-            <p className="py-4">
-              Technologies used: React, Next.js, Tailwind CSS, REST API, Vercel
+            <p className="pt-4">
+              A "motivational" quote generator powered by ChatGPT (OpenAI API).
+            </p>
+            <p className="py-2">
+              Technologies used:{" "}
+              <span className="text-slate-300/90">
+                React, Next.js, Tailwind CSS, REST API, Vercel
+              </span>
             </p>
           </motion.div>
 
