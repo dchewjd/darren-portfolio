@@ -86,7 +86,7 @@ export default function Home() {
           </p>
           <br />
           <p>
-            Hello! My name is Darren, and I'm a engineer with a strong
+            Hello! My name is Darren, and I'm an engineer with a strong
             background in software development and client management. My passion
             is crafting digital solutions that drive success and deliver value
             to users.
