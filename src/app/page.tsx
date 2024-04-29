@@ -41,12 +41,11 @@ export default function Home() {
           <br />
           <h1 className="text-slate-300 ml-[-4px]">Darren Chew.</h1>
           <h1 className="text-slate-400 ml-[-3px]">
-            I craft delightful web experiences.
+            I transform ideas into impactful solutions.
           </h1>
           <br />
           <p className="text-slate-400 max-w-2xl pb-1 lg:pb-4">
-            I’m a software engineer specializing in building (and occasionally
-            designing) exceptional digital experiences.
+            Building and designing exceptional digital experiences.
           </p>
           <br />
           <motion.button
@@ -87,10 +86,10 @@ export default function Home() {
           </p>
           <br />
           <p>
-            Hello! My name is Darren, and I'm a software engineer with 3+ years
-            of experience in creating engaging and dynamic web interfaces. My
-            passion is crafting digital experiences that are both beautiful and
-            functional, and that have a real impact on people's lives.
+            Hello! My name is Darren, and I'm a engineer with a strong
+            background in software development and client management. My passion
+            is crafting digital solutions that drive success and deliver value
+            to users.
           </p>
           <br />
           <p>
@@ -112,8 +111,8 @@ export default function Home() {
             At my core, I'm a builder and a creator. I'm passionate about using
             technology to drive success and create meaningful solutions that
             make a difference in people's lives. If you're looking for a skilled
-            and dedicated software engineer to bring your digital vision to
-            life, I'd love to hear from you.
+            and dedicated engineer to bring your digital vision to life, I'd
+            love to hear from you.
           </p>
         </motion.div>
         <motion.div
@@ -148,16 +147,56 @@ export default function Home() {
                 value="tab1"
                 className="text-center w-1/2 sm:w-40 mb-4 px-6 py-2 pt-1 border-b-2 data-[state=inactive]:border-slate-400/30 data-[state=active]:border-orange-400 data-[state=active]:text-orange-400 hover:bg-slate-600"
               >
-                Alpha Impact
+                Meta
               </Tabs.Trigger>
               <Tabs.Trigger
                 value="tab2"
+                className="text-center w-1/2 sm:w-40 mb-4 px-6 py-2 pt-1 border-b-2 data-[state=inactive]:border-slate-400/30 data-[state=active]:border-orange-400 data-[state=active]:text-orange-400 hover:bg-slate-600"
+              >
+                Alpha Impact
+              </Tabs.Trigger>
+              <Tabs.Trigger
+                value="tab3"
                 className="text-center w-1/2 sm:w-40 mb-4 px-6 py-2 pt-1 border-b-2 data-[state=inactive]:border-slate-400/30 data-[state=active]:border-orange-400 data-[state=active]:text-orange-400 hover:bg-slate-600"
               >
                 NCS
               </Tabs.Trigger>
             </Tabs.List>
             <Tabs.Content value="tab1" className="">
+              <motion.div variants={FadeIn}>
+                <p className="text-slate-300">
+                  Technical Solutions Consultant
+                  <span className="text-orange-400"> @ Meta</span>
+                </p>
+                <p className="text-sm">August 2023 - Present</p>
+                <br />
+                <ul className="ml-4 list-disc list-outside marker:text-orange-400 gap-1 space-y-4 ">
+                  <li>
+                    Provide technical expertise to sales teams in supporting
+                    APAC’s largest in-market and mid-market accounts across
+                    Meta’s suite of AdTech products
+                  </li>
+                  <li>
+                    Unblocked millions of dollars in revenue for clients by
+                    implementing strategic solutions and overcoming technical
+                    challenges
+                  </li>
+                  <li>
+                    Delivered solutions to clients with a 100% on-time record,
+                    meeting or exceeding service level objectives and ensuring
+                    high-quality results
+                  </li>
+                  <li>Technologies used: SQL, JavaScript, Rest API</li>
+                  <li>
+                    Meta Products: Meta Pixel, iOS and Android Facebook SDK,
+                    Marketing API, Ads Manager, Catalog, Collaborative Ads,
+                    Dynamic Ads, Click to WhatsApp, Click to Messenger, Branded
+                    Content Ads, Ad Delivery
+                  </li>
+                </ul>
+              </motion.div>
+            </Tabs.Content>
+            <Tabs.Content value="tab2" className="">
               <motion.div variants={FadeIn}>
                 <p className="text-slate-300">
                   Software Engineer
@@ -189,7 +228,7 @@ export default function Home() {
                 </ul>
               </motion.div>
             </Tabs.Content>
-            <Tabs.Content value="tab2" className="">
+            <Tabs.Content value="tab3" className="">
               <motion.div variants={FadeIn}>
                 <p className="text-slate-300">
                   Application Consultant
@@ -214,11 +253,6 @@ export default function Home() {
                     requirements and develop tailored solutions to address their
                     specific needs, resulting in increased customer satisfaction
                     and retention
-                  </li>
-                  <li>
-                    Successfully coded, tested, reviewed, and delivered software
-                    solutions with a 100% on-time record, meeting or exceeding
-                    service level objectives and ensuring high-quality results
                   </li>
                   <li>
                     Optimized web application compatibility and security across
@@ -325,7 +359,7 @@ export default function Home() {
           </div>
           <div className="my-10">
             <h4 className="text-slate-300">
-              More projects brewing in 2023 ...
+              More projects brewing in 2024 ...
             </h4>
           </div>
         </motion.div>
