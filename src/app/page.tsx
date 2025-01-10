@@ -442,7 +442,7 @@ export default function Home() {
           }}
           viewport={{ once: true }}
           id="footer"
-          className="font-octo font-semibold text-[1.75rem] sm:text-[2.5rem] md:text-[3.5rem] lg:text-[5rem] text-slate-700/0 py-8 bg-clip-text bg-gradient-to-r from-slate-300/50 to-slate-700/60"
+          className="font-semibold text-[3rem] sm:text-[5rem] md:text-[5.5rem] lg:text-[7rem] text-slate-700/0 py-8 bg-clip-text bg-gradient-to-r from-slate-300/50 to-slate-700/60"
         >
           DARREN CHEW
         </motion.div>
